@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b3d2e"/>
+      <stop offset="1" stop-color="#1c6b4c"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <rect x="70" y="70" width="1060" height="535" rx="24" fill="#ffffff" opacity="0.08"/>
+  <rect x="110" y="120" width="980" height="70" rx="14" fill="#ffffff" opacity="0.18"/>
+  <rect x="110" y="220" width="420" height="60" rx="12" fill="#ffffff" opacity="0.22"/>
+  <rect x="110" y="300" width="360" height="40" rx="10" fill="#ffffff" opacity="0.18"/>
+  <rect x="110" y="370" width="180" height="48" rx="12" fill="#f3b61f" opacity="0.9"/>
+  <rect x="620" y="220" width="430" height="260" rx="18" fill="#ffffff" opacity="0.14"/>
+  <rect x="660" y="260" width="350" height="40" rx="10" fill="#ffffff" opacity="0.2"/>
+  <rect x="660" y="320" width="300" height="24" rx="8" fill="#ffffff" opacity="0.16"/>
+  <rect x="660" y="360" width="260" height="24" rx="8" fill="#ffffff" opacity="0.16"/>
+  <rect x="660" y="400" width="220" height="24" rx="8" fill="#ffffff" opacity="0.16"/>
+  <text x="110" y="540" font-family="Arial, sans-serif" font-size="32" fill="#f8f8f8" opacity="0.85">Landing / Home</text>
+</svg>
