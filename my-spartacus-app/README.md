@@ -1,4 +1,4 @@
-# Spartacus Learning Series
+ng add @spartacus/schematics@~221121.7# Spartacus Learning Series
 Recruiter-focused learning project for SAP Spartacus (Composable Storefront), designed to demonstrate deployability and clean engineering practices.
 
 Live demo:
