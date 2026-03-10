@@ -38,7 +38,7 @@ jobs:
 
       - name: SPA Fallback
         working-directory: my-spartacus-app
-        run: cp dist/my-spartacus-app/index.html dist/my-spartacus-app/404.html
+        run: cp dist/my-spartacus-app/browser/index.html dist/my-spartacus-app/browser/404.html
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
@@ -46,7 +46,7 @@ jobs:
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: my-spartacus-app/dist/my-spartacus-app
+          path: my-spartacus-app/dist/my-spartacus-app/browser
 
   deploy:
     needs: build
