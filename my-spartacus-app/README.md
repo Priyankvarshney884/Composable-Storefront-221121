@@ -39,7 +39,7 @@ Open `http://localhost:4200/`.
 npm run build
 ```
 
-Build output is in `dist/my-spartacus-app`.
+Build output is in `dist/my-spartacus-app/browser`.
 
 ## GitHub Pages deployment
 This repo includes a Pages workflow that:
