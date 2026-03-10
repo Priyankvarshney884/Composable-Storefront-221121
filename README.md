@@ -1,2 +1,6 @@
 # Composable-Storefront-221121
-Creating this new repo to understand the Composablee-Storefront-2211 features and new implementation library features.
+Learning series project for SAP Spartacus (Composable Storefront), focused on deployability and a recruiter-friendly presentation.
+
+Quick links:
+- App README: `my-spartacus-app/README.md`
+- GitHub Pages workflow: `.github/workflows/deploy-pages.yml`
