@@ -1,59 +1,55 @@
-# MySpartacusApp
+# Spartacus Learning Series
+Recruiter-focused learning project for SAP Spartacus (Composable Storefront), designed to demonstrate deployability and clean engineering practices.
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.1.
+Live demo:
+- GitHub Pages (after first successful deploy): `https://<your-username>.github.io/<your-repo>/`
 
-## Development server
+Screenshots:
+![Landing](docs/assets/landing.svg)
+![Catalog](docs/assets/catalog.svg)
+![Checkout](docs/assets/checkout.svg)
 
-To start a local development server, run:
+## What this demonstrates
+- Spartacus learning series structure with incremental storefront features.
+- SAP Commerce OCC integration approach (cloud and local).
+- Production build and GitHub Pages deployment pipeline.
 
+## Tech stack
+- Angular 21
+- SAP Spartacus (learning series target)
+- SAP Commerce OCC APIs (cloud and local)
+
+## API modes
+This project uses SAP Commerce OCC endpoints in two modes:
+- Cloud SAP Commerce (real-time hosted OCC)
+- Local SAP Commerce (for development and offline iteration)
+
+Document the exact base URLs and credentials you use in a private note (do not commit secrets). If you use environment-based configuration, list the expected env vars in this README.
+
+## Local development
 ```bash
-ng serve
+npm ci
+npm run start
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Open `http://localhost:4200/`.
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
+## Production build
 ```bash
-ng generate component component-name
+npm run build
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Build output is in `dist/my-spartacus-app`.
 
-```bash
-ng generate --help
-```
+## GitHub Pages deployment
+This repo includes a Pages workflow that:
+- Installs dependencies
+- Builds with `--base-href "/<repo>/"` for Pages
+- Uploads the `dist` artifacts
 
-## Building
+Workflow file: `.github/workflows/deploy-pages.yml`
 
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Suggested recruiter notes
+- What business flows you implemented (search, PDP, cart, checkout)
+- Any Spartacus customization (CMS components, routing, translations, theming)
+- How you kept the app deployable and reproducible
