@@ -13,6 +13,7 @@ import {
   layoutConfigFactory,
   mediaConfig,
 } from '@spartacus/storefront';
+import { CustomLayoutConfig } from '../config/custom-layout';
 
 @NgModule({
   declarations: [],
@@ -43,6 +44,7 @@ import {
         level: '221121.7',
       },
     }),
+    provideConfig(CustomLayoutConfig)
   ],
 })
 export class SpartacusConfigurationModule {}
