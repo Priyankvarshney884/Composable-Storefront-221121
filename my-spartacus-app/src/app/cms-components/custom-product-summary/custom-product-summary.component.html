@@ -1,0 +1,98 @@
+<ng-container *ngIf="product$ | async as product">
+  <ng-container *ngIf="product.potentialPromotions">
+    <cx-promotions [promotions]="product.potentialPromotions"></cx-promotions>
+  </ng-container>
+
+  <ng-template
+    [cxOutlet]="outlets.PRICE"
+    [cxOutletContext]="{ product: product }"
+  >
+    <div
+      [attr.aria-label]="'productSummary.newItemPrice' | cxTranslate"
+      class="price"
+    >
+      {{ product?.price?.formattedValue }}
+    </div>
+  </ng-template>
+
+  <ng-template
+    [cxOutlet]="outlets.SUMMARY"
+    [cxOutletContext]="{ product: product }"
+  >
+    <p [innerHTML]="product?.summary" class="summary"></p>
+ 
+        <!-- <p>{{product.nameHtml}}</p>
+         
+        -->
+  </ng-template>
+
+
+  <!-- //POC Code  -->
+  <div class="product-lookup">
+    <div class="product-lookup__controls">
+      <input
+        class="product-lookup__input"
+        type="text"
+        placeholder="Please enter the product code"
+        #productCode
+      >
+      <button class="product-lookup__button" (click)="findDescription(productCode.value)">
+        Check description
+      </button>
+      <button class="product-lookup__button product-lookup__button--clear" (click)="clearDescription(productCode)">
+        Clear
+      </button>
+    </div>
+    <ng-container *ngIf="newProductData$ | async as newProduct">
+      <div class="product-lookup__result">
+        {{ newProduct.description }}
+      </div>
+    </ng-container>
+  </div>
+
+  <!-- POC: Homepage banner -->
+  <div class="product-banner-section">
+    <div class="product-banner-controls">
+      <input
+        class="product-lookup__input"
+        type="text"
+        placeholder="Enter banner UID"
+        #bannerUidInput
+        [value]="BannerName"
+      >
+      <button class="product-lookup__button" (click)="loadBanner(bannerUidInput.value)">
+        Load Banner
+      </button>
+      <button class="product-lookup__button" (click)="loadNewBanner(bannerUidInput.value)">
+        New Banner
+      </button>
+      <button
+        *ngIf="showBanner"
+        class="product-lookup__button product-lookup__button--clear"
+        (click)="clearBanner()">
+        Clear Banner
+      </button>
+    </div>
+
+    <ng-container *ngIf="showBanner && (banner$ | async) as banner">
+      <div class="product-banner" *ngIf="banner">
+        <cx-media [container]="getImage(banner)"></cx-media>
+        <div class="product-banner__body" *ngIf="banner.headline || banner.content">
+          <p class="product-banner__headline" *ngIf="banner.headline">{{ banner.headline }}</p>
+          <p class="product-banner__content" *ngIf="banner.content">{{ banner.content }}</p>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+
+
+
+  <!-- @TODO: Temp. Comment out share link while not in use by CMS -->
+  <!-- <ng-container *cxOutlet="outlets.SHARE">
+        <div>
+          <a href="#" class="share btn-link">
+            {{ 'productSummary.share' | cxTranslate }}
+          </a>
+        </div>
+      </ng-container> -->
+</ng-container>

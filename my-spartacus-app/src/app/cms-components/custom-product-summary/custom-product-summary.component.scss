@@ -1,0 +1,117 @@
+.product-lookup {
+  margin-top: 1rem;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.product-lookup__controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.product-lookup__input {
+  flex: 1 1 260px;
+  min-width: 220px;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  background: #ffffff;
+  font-size: 0.95rem;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.product-lookup__input:focus {
+  outline: none;
+  border-color: #0f62fe;
+  box-shadow: 0 0 0 3px rgba(15, 98, 254, 0.2);
+}
+
+.product-lookup__button {
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  border: 1px solid #0b4ec2;
+  background: #0f62fe;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: transform 0.05s ease, background 0.15s ease, border-color 0.15s ease;
+}
+
+.product-lookup__button:hover {
+  background: #0b4ec2;
+  border-color: #0a44a9;
+}
+
+.product-lookup__button:active {
+  transform: translateY(1px);
+}
+
+.product-lookup__button--clear {
+  background: #ffffff;
+  color: #dc2626;
+  border-color: #dc2626;
+}
+
+.product-lookup__button--clear:hover {
+  background: #fef2f2;
+  border-color: #b91c1c;
+  color: #b91c1c;
+}
+
+.product-lookup__result {
+  padding: 0.75rem 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background: #f8fafc;
+  color: #0f172a;
+  font-size: 0.95rem;
+}
+
+// Banner
+.product-banner-section {
+  margin-top: 1rem;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.product-banner-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.product-banner {
+  margin-top: 1rem;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  background: #f8fafc;
+
+  cx-media img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+    max-height: 260px;
+  }
+}
+
+.product-banner__body {
+  padding: 0.85rem 1rem;
+}
+
+.product-banner__headline {
+  margin: 0 0 0.35rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.product-banner__content {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #475569;
+}
