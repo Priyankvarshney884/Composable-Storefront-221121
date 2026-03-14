@@ -34,10 +34,12 @@ jobs:
 
       - name: Build
         working-directory: my-spartacus-app
+        # GitHub Pages is served from /<repo>/ so we set base-href accordingly.
         run: npm run build -- --base-href "/${{ github.event.repository.name }}/"
 
       - name: SPA Fallback
         working-directory: my-spartacus-app
+        # SPA routing on GitHub Pages needs a 404.html that mirrors index.html.
         run: cp dist/my-spartacus-app/browser/index.html dist/my-spartacus-app/browser/404.html
 
       - name: Configure Pages
