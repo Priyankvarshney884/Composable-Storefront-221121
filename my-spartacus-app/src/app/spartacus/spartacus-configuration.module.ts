@@ -14,12 +14,26 @@ import {
   mediaConfig,
 } from '@spartacus/storefront';
 import { CustomLayoutConfig } from '../config/custom-layout';
+import { customProductOccConfig } from '../config/custom-product-occ-config';
+import { ActiveCartService } from '@spartacus/cart/base/core';
+import { CustomActiveCartService } from '../services/custom-active-cart.service';
+import { ActiveCartFacade } from '@spartacus/cart/base/root';
 
 @NgModule({
   declarations: [],
   imports: [],
   providers: [
     provideConfigFactory(layoutConfigFactory),
+    {
+      // overridin the active cart service with custom active cart service to spartacus app level 
+      provide: ActiveCartService,
+      useClass:CustomActiveCartService
+    },
+    {
+      // overridin the active cart service with custom active cart service to spartacus app level 
+      provide: ActiveCartFacade,
+      useClass:CustomActiveCartService
+    },
     provideConfig(mediaConfig),
     ...defaultCmsContentProviders,
     provideConfig(<OccConfig>{
@@ -44,7 +58,8 @@ import { CustomLayoutConfig } from '../config/custom-layout';
         level: '221121.7',
       },
     }),
-    provideConfig(CustomLayoutConfig)
+    provideConfig(CustomLayoutConfig),
+    provideConfig(customProductOccConfig),
   ],
 })
 export class SpartacusConfigurationModule {}
