@@ -39,8 +39,9 @@ import { ActiveCartFacade } from '@spartacus/cart/base/root';
     provideConfig(<OccConfig>{
       backend: {
         occ: {
-          baseUrl: 'https://composable-storefront-demo.eastus.cloudapp.azure.com:8443',
-        },
+          baseUrl: 'https://localhost:9002',
+          prefix: '/occ/v2/'
+        }
       },
     }),
     provideConfig(<SiteContextConfig>{

@@ -173,7 +173,7 @@ import { CustomProductSummaryModule } from '../cms-components/custom-product-sum
       unifiedDefaultHeaderSlotsAcrossBreakpoints: true,
       reserveSpaceForImagesOnPdpAndPlp: true,
       lazyLoadImagesByDefault: true,
-      authorizationCodeFlowByDefault: true,
+      authorizationCodeFlowByDefault: false,
       incrementProcessesCountForMergeCart: true,
       dispatchLoginActionOnlyWhenTokenReceived: true,
       defaultLayoutConfigWithoutPageFold: true,
