@@ -70,6 +70,8 @@ import { ProductVariantsFeatureModule } from './features/product/product-variant
 import { ProductImageZoomFeatureModule } from './features/product/product-image-zoom-feature.module';
 import { CustomBannerModule } from '../cms-components/custom-banner/custom-banner.module';
 import { CustomProductSummaryModule } from '../cms-components/custom-product-summary/custom-product-summary.module';
+import { CutomCheckoutModule } from '../cms-components/cutom-checkout/cutom-checkout.module';
+import { CustomCheckoutProgressModule } from '../cms-components/cutom-checkout/custom-checkout-progress/custom-checkout-progress.module';
 
 @NgModule({
   declarations: [],
@@ -139,7 +141,9 @@ import { CustomProductSummaryModule } from '../cms-components/custom-product-sum
     ProductVariantsFeatureModule,
     ProductImageZoomFeatureModule,
     CustomBannerModule,
-    CustomProductSummaryModule
+    CustomProductSummaryModule,
+    CutomCheckoutModule,
+    CustomCheckoutProgressModule
   ],
   providers: [
     provideFeatureToggles({
@@ -181,6 +185,7 @@ import { CustomProductSummaryModule } from '../cms-components/custom-product-sum
       enablePasswordExpiredErrorTranslation: true,
       enableQuotePurchaseOrderNumber: true,
       enableReturnOrderReturnableQuantityConsigmentFallback: true,
+      
     }),
   ],
 })

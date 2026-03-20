@@ -18,6 +18,7 @@ import { customProductOccConfig } from '../config/custom-product-occ-config';
 import { ActiveCartService } from '@spartacus/cart/base/core';
 import { CustomActiveCartService } from '../services/custom-active-cart.service';
 import { ActiveCartFacade } from '@spartacus/cart/base/root';
+import { CustomCheckoutSteps } from '../config/custom-checkout-steps-config';
 
 @NgModule({
   declarations: [],
@@ -39,8 +40,7 @@ import { ActiveCartFacade } from '@spartacus/cart/base/root';
     provideConfig(<OccConfig>{
       backend: {
         occ: {
-          baseUrl: 'https://localhost:9002',
-          prefix: '/occ/v2/'
+          baseUrl: 'https://composable-storefront-demo.eastus.cloudapp.azure.com:8443',         
         }
       },
     }),
@@ -61,6 +61,7 @@ import { ActiveCartFacade } from '@spartacus/cart/base/root';
     }),
     provideConfig(CustomLayoutConfig),
     provideConfig(customProductOccConfig),
+    provideConfig(CustomCheckoutSteps),
   ],
 })
 export class SpartacusConfigurationModule {}
