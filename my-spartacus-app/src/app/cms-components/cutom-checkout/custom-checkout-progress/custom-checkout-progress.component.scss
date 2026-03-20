@@ -1,0 +1,19 @@
+.checkout-progress {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.checkout-progress__counter {
+  color: #64748b;
+  white-space: nowrap;
+}
+
+.checkout-progress__name {
+  font-weight: 600;
+  color: #0f172a;
+}
