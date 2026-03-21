@@ -1,0 +1,214 @@
+// ── Backdrop ────────────────────────────────────────────────────────────────
+.gls-drawer-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1050;
+  background: rgba(0, 0, 0, 0.45);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+
+  &--visible {
+    opacity: 1;
+    pointer-events: all;
+  }
+}
+
+// ── Drawer panel ────────────────────────────────────────────────────────────
+.gls-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 50vw;
+  min-width: 320px;
+  height: 100vh;
+  background: #fff;
+  box-shadow: -4px 0 24px rgba(0, 0, 0, 0.18);
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1051;
+
+  &--open {
+    transform: translateX(0);
+  }
+
+  // ── Header ────────────────────────────────────────────────────────────────
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid #e5e7eb;
+    background: #f9fafb;
+    flex-shrink: 0;
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #111827;
+  }
+
+  &__icon {
+    font-size: 1.2rem;
+  }
+
+  &__close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    border: none;
+    background: transparent;
+    border-radius: 50%;
+    font-size: 1rem;
+    color: #6b7280;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+
+    &:hover {
+      background: #f3f4f6;
+      color: #111827;
+    }
+  }
+
+  // ── Body ──────────────────────────────────────────────────────────────────
+  &__body {
+    flex: 1;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+
+    gls-dpm {
+      flex: 1;
+      display: block;
+      height: 100%;
+    }
+  }
+}
+
+// ── Trigger section (shown in address form) ──────────────────────────────────
+.gls-trigger-section {
+  margin: 1rem 0;
+}
+
+.gls-trigger-label {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 0.6rem;
+
+  &__icon {
+    font-size: 1rem;
+  }
+
+  &__text {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #374151;
+  }
+
+  &__badge {
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: #6b7280;
+    background: #f3f4f6;
+    border: 1px solid #e5e7eb;
+    border-radius: 999px;
+    padding: 0.1rem 0.5rem;
+  }
+}
+
+// ── Open button ───────────────────────────────────────────────────────────────
+.gls-open-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1.5px dashed #d1d5db;
+  border-radius: 8px;
+  background: #f9fafb;
+  color: #374151;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+
+  &__icon {
+    font-size: 1rem;
+  }
+
+  &:hover {
+    border-color: var(--cx-color-primary, #1d4ed8);
+    background: #eff6ff;
+    color: var(--cx-color-primary, #1d4ed8);
+  }
+}
+
+// ── Selected shop card ────────────────────────────────────────────────────────
+.gls-selected-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  border: 1.5px solid #16a34a;
+  border-radius: 8px;
+  background: #f0fdf4;
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    min-width: 0;
+  }
+
+  &__name {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #15803d;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__address {
+    font-size: 0.8rem;
+    color: #4b5563;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__change {
+    flex-shrink: 0;
+    padding: 0.35rem 0.85rem;
+    border: 1px solid #16a34a;
+    border-radius: 6px;
+    background: transparent;
+    color: #15803d;
+    font-size: 0.8rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+
+    &:hover {
+      background: #16a34a;
+      color: #fff;
+    }
+  }
+}
+
+// ── Responsive ────────────────────────────────────────────────────────────────
+@media (max-width: 768px) {
+  .gls-drawer {
+    width: 100vw;
+  }
+}
