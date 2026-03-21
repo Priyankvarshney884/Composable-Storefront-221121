@@ -1,5 +1,8 @@
 import { CheckoutConfig, CheckoutStepType, DeliveryModePreferences } from "@spartacus/checkout/base/root";
 
+// Custom step type for GLS ParcelShop selection
+export const GLS_PARCEL_SHOP_STEP_TYPE = 'glsParcelShop' as unknown as CheckoutStepType;
+
 export const CustomCheckoutSteps : CheckoutConfig = {
     checkout: {
     steps: [
@@ -15,6 +18,12 @@ export const CustomCheckoutSteps : CheckoutConfig = {
         routeName: 'checkoutDeliveryMode',
         type: [CheckoutStepType.DELIVERY_MODE],
       },
+      // {
+      //   id: 'glsParcelShop',
+      //   name: 'GLS ParcelShop',
+      //   routeName: 'checkoutGlsParcelShop',
+      //   type: [GLS_PARCEL_SHOP_STEP_TYPE],
+      // },
       {
         id: 'paymentDetails',
         name: 'checkoutProgress.paymentDetails',

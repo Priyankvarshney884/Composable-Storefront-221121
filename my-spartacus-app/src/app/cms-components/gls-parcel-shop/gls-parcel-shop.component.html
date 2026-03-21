@@ -1,0 +1,58 @@
+<!-- Backdrop + Drawer — always in DOM, visibility driven by isOpen -->
+<div
+  class="gls-drawer-backdrop"
+  [class.gls-drawer-backdrop--visible]="isOpen"
+  (click)="onBackdropClick($event)"
+>
+  <aside class="gls-drawer" [class.gls-drawer--open]="isOpen">
+    <div class="gls-drawer__header">
+      <div class="gls-drawer__title">
+        <span class="gls-drawer__icon">📦</span>
+        <span>Select GLS ParcelShop</span>
+      </div>
+      <button
+        type="button"
+        class="gls-drawer__close"
+        (click)="close()"
+        aria-label="Close map"
+      >
+        ✕
+      </button>
+    </div>
+
+    <div class="gls-drawer__body">
+      <!-- Inline GLS widget — always in DOM so ViewChild resolves -->
+      <gls-dpm #glsWidget id="gls-dpm-widget"></gls-dpm>
+    </div>
+  </aside>
+</div>
+
+<!-- Trigger button shown in the address form -->
+<div class="gls-trigger-section">
+  <div class="gls-trigger-label">
+    <span class="gls-trigger-label__icon">🗺️</span>
+    <span class="gls-trigger-label__text">GLS ParcelShop Delivery</span>
+    <span class="gls-trigger-label__badge">Optional</span>
+  </div>
+
+  <ng-container *ngIf="selectedShop$ | async as shop; else noShop">
+    <div class="gls-selected-card">
+      <div class="gls-selected-card__info">
+        <span class="gls-selected-card__name">{{ shop.name }}</span>
+        <span class="gls-selected-card__address">
+          {{ shop.contact.address }}, {{ shop.contact.postalCode }} {{ shop.contact.city }}
+        </span>
+      </div>
+      <button type="button" class="gls-selected-card__change" (click)="open()">
+        Change
+      </button>
+    </div>
+  </ng-container>
+
+  <ng-template #noShop>
+    <button type="button" class="gls-open-btn" (click)="open()">
+      <span class="gls-open-btn__icon">📍</span>
+      Choose a GLS ParcelShop
+    </button>
+  </ng-template>
+</div>
