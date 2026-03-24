@@ -1,0 +1,12 @@
+{
+  "glsParcelShop": {
+    "drawerTitle": "Select GLS ParcelShop",
+    "drawerClose": "Close map",
+    "triggerLabel": "GLS ParcelShop Delivery",
+    "triggerBadge": "Optional",
+    "openBtn": "Choose a GLS ParcelShop",
+    "changeBtn": "Change",
+    "selected": "Selected ParcelShop",
+    "noShopSelected": "No ParcelShop selected"
+  }
+}

@@ -20,7 +20,7 @@ import { GlsParcelShopService } from './gls-parcel-shop.service';
 @Component({
   selector: 'app-gls-parcel-shop',
   standalone: true,
-  imports: [NgIf, AsyncPipe],
+  imports: [NgIf, AsyncPipe, TranslatePipe],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   templateUrl: './gls-parcel-shop.component.html',
   styleUrl: './gls-parcel-shop.component.scss',
