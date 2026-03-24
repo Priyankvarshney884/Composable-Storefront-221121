@@ -20,6 +20,8 @@ import { CustomActiveCartService } from '../services/custom-active-cart.service'
 import { ActiveCartFacade } from '@spartacus/cart/base/root';
 import { CustomCheckoutSteps } from '../config/custom-checkout-steps-config';
 import { customTranslations } from '../../assets/custom-translation';
+import { CustomAuthInterceptor } from '../auth/user-http-interceptor/custom-auth-interceptor';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 @NgModule({
   declarations: [],
@@ -70,6 +72,11 @@ import { customTranslations } from '../../assets/custom-translation';
     provideConfig(CustomLayoutConfig),
     provideConfig(customProductOccConfig),
     provideConfig(CustomCheckoutSteps),
+    {
+    provide: HTTP_INTERCEPTORS,
+    useExisting: CustomAuthInterceptor,
+    multi: true,
+  },
   ],
 })
 export class SpartacusConfigurationModule {}
