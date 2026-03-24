@@ -1,0 +1,15 @@
+{
+  "addressForm": {
+    "address3": "Adresse 3",
+    "address3Placeholder": "Wohnung, Etage usw. (optional)",
+    "glsParcelSection": "GLS ParcelShop-Lieferung (optional)",
+    "drawerTitle": "GLS ParcelShop auswählen",
+    "drawerClose": "Karte schließen",
+    "triggerLabel": "GLS ParcelShop-Lieferung",
+    "triggerBadge": "Optional",
+    "openBtn": "GLS ParcelShop auswählen",
+    "changeBtn": "Ändern",
+    "selected": "Ausgewählter ParcelShop",
+    "noShopSelected": "Kein ParcelShop ausgewählt"
+  }
+}

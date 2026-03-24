@@ -19,6 +19,7 @@ import { ActiveCartService } from '@spartacus/cart/base/core';
 import { CustomActiveCartService } from '../services/custom-active-cart.service';
 import { ActiveCartFacade } from '@spartacus/cart/base/root';
 import { CustomCheckoutSteps } from '../config/custom-checkout-steps-config';
+import { customTranslations } from '../../assets/custom-translation';
 
 @NgModule({
   declarations: [],
@@ -50,6 +51,13 @@ import { CustomCheckoutSteps } from '../config/custom-checkout-steps-config';
     provideConfig(<I18nConfig>{
       i18n: {
         resources: { en: translationsEn },
+        chunks: translationChunksConfig,
+        fallbackLang: 'en',
+      },
+    }),
+    provideConfig(<I18nConfig>{
+      i18n: {
+        resources: customTranslations,
         chunks: translationChunksConfig,
         fallbackLang: 'en',
       },

@@ -8,13 +8,13 @@
     <div class="gls-drawer__header">
       <div class="gls-drawer__title">
         <span class="gls-drawer__icon">📦</span>
-        <span>Select GLS ParcelShop</span>
+        <span>{{ 'addressForm.drawerTitle' | cxTranslate }}</span>
       </div>
       <button
         type="button"
         class="gls-drawer__close"
         (click)="close()"
-        aria-label="Close map"
+        [attr.aria-label]="'addressForm.drawerClose' | cxTranslate"
       >
         ✕
       </button>
@@ -27,24 +27,24 @@
   </aside>
 </div>
 
-<!-- Trigger button shown in the address form -->
+<!-- Trigger button shown in the addressForm form -->
 <div class="gls-trigger-section">
   <div class="gls-trigger-label">
     <span class="gls-trigger-label__icon">🗺️</span>
-    <span class="gls-trigger-label__text">GLS ParcelShop Delivery</span>
-    <span class="gls-trigger-label__badge">Optional</span>
+    <span class="gls-trigger-label__text">{{ 'addressForm.triggerLabel' | cxTranslate }}</span>
+    <span class="gls-trigger-label__badge">{{ 'addressForm.triggerBadge' | cxTranslate }}</span>
   </div>
 
   <ng-container *ngIf="selectedShop$ | async as shop; else noShop">
     <div class="gls-selected-card">
       <div class="gls-selected-card__info">
         <span class="gls-selected-card__name">{{ shop.name }}</span>
-        <span class="gls-selected-card__address">
+        <span class="gls-selected-card__addressForm">
           {{ shop.contact.address }}, {{ shop.contact.postalCode }} {{ shop.contact.city }}
         </span>
       </div>
       <button type="button" class="gls-selected-card__change" (click)="open()">
-        Change
+        {{ 'addressForm.changeBtn' | cxTranslate }}
       </button>
     </div>
   </ng-container>
@@ -52,7 +52,7 @@
   <ng-template #noShop>
     <button type="button" class="gls-open-btn" (click)="open()">
       <span class="gls-open-btn__icon">📍</span>
-      Choose a GLS ParcelShop
+      {{ 'addressForm.openBtn' | cxTranslate }}
     </button>
   </ng-template>
 </div>
