@@ -68,6 +68,10 @@ import { AsmCustomer360FeatureModule } from './features/asm/asm-customer360-feat
 import { SmartEditFeatureModule } from './features/smartedit/smart-edit-feature.module';
 import { ProductVariantsFeatureModule } from './features/product/product-variants-feature.module';
 import { ProductImageZoomFeatureModule } from './features/product/product-image-zoom-feature.module';
+import { CustomBannerModule } from '../cms-components/custom-banner/custom-banner.module';
+import { CustomProductSummaryModule } from '../cms-components/custom-product-summary/custom-product-summary.module';
+import { CutomCheckoutModule } from '../cms-components/cutom-checkout/cutom-checkout.module';
+import { CustomCheckoutProgressModule } from '../cms-components/cutom-checkout/custom-checkout-progress/custom-checkout-progress.module';
 
 @NgModule({
   declarations: [],
@@ -136,6 +140,10 @@ import { ProductImageZoomFeatureModule } from './features/product/product-image-
     SmartEditFeatureModule,
     ProductVariantsFeatureModule,
     ProductImageZoomFeatureModule,
+    CustomBannerModule,
+    CustomProductSummaryModule,
+    CutomCheckoutModule,
+    CustomCheckoutProgressModule
   ],
   providers: [
     provideFeatureToggles({
@@ -169,7 +177,7 @@ import { ProductImageZoomFeatureModule } from './features/product/product-image-
       unifiedDefaultHeaderSlotsAcrossBreakpoints: true,
       reserveSpaceForImagesOnPdpAndPlp: true,
       lazyLoadImagesByDefault: true,
-      authorizationCodeFlowByDefault: true,
+      authorizationCodeFlowByDefault: false,
       incrementProcessesCountForMergeCart: true,
       dispatchLoginActionOnlyWhenTokenReceived: true,
       defaultLayoutConfigWithoutPageFold: true,
@@ -177,6 +185,7 @@ import { ProductImageZoomFeatureModule } from './features/product/product-image-
       enablePasswordExpiredErrorTranslation: true,
       enableQuotePurchaseOrderNumber: true,
       enableReturnOrderReturnableQuantityConsigmentFallback: true,
+      
     }),
   ],
 })

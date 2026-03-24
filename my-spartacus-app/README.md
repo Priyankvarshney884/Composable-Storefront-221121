@@ -1,4 +1,9 @@
 ng add @spartacus/schematics@~221121.7# Spartacus Learning Series
+<!--
+Change notes:
+- Added GitHub Pages deployment workflow and demo assets.
+- Updated build output path to dist/my-spartacus-app/browser.
+-->
 Recruiter-focused learning project for SAP Spartacus (Composable Storefront), designed to demonstrate deployability and clean engineering practices.
 
 Live demo:

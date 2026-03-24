@@ -1,0 +1,10 @@
+<ng-container *ngIf="currentStepInfo$ | async as stepInfo">
+  <div class="checkout-progress">
+    <h1 class="checkout-progress__counter">
+      Step {{ stepInfo.stepNumber }} 
+    </h1>
+    <h1 class="checkout-progress__name">
+      {{ stepInfo.name | cxTranslate }}
+    </h1>
+  </div>
+</ng-container>
