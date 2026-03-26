@@ -1,0 +1,51 @@
+<section class="fs-shell">
+  <header class="fs-header">
+    <div class="fs-title">Fakestore NgRx POC</div>
+    <div class="fs-subtitle">
+      Load a product by ID to see the NgRx flow update state in real time.
+    </div>
+  </header>
+
+  <div class="fs-controls">
+    <label class="fs-label" for="productId">Product ID</label>
+    <div class="fs-input-row">
+      <input
+        id="productId"
+        class="fs-input"
+        type="number"
+        min="1"
+        step="1"
+        [(ngModel)]="productId"
+      />
+      <button class="fs-btn" (click)="loadProduct()">Load</button>
+    </div>
+    <div class="fs-hint">Try 1 to 20 for visible results.</div>
+  </div>
+
+  <div class="fs-status">
+    <span *ngIf="loading$ | async" class="fs-pill">Loading</span>
+    <span *ngIf="(error$ | async) as err" class="fs-pill fs-pill--error">
+      Error: {{ err?.message || err }}
+    </span>
+    <span *ngIf="currentId" class="fs-pill fs-pill--muted">
+      Current ID: {{ currentId }}
+    </span>
+  </div>
+
+  <ng-container *ngIf="product$ | async as product">
+    <article class="fs-card">
+      <div class="fs-card-media">
+        <img [src]="getImageUrl(product)" alt="{{ product.name }}" />
+      </div>
+      <div class="fs-card-body">
+        <div class="fs-card-kicker">{{ product.categories?.[0]?.name }}</div>
+        <h2 class="fs-card-title">{{ product.name }}</h2>
+        <p class="fs-card-desc">{{ product.description }}</p>
+        <div class="fs-card-footer">
+          <span class="fs-price">{{ product.price?.formattedValue }}</span>
+          <span class="fs-code">Code: {{ product.code }}</span>
+        </div>
+      </div>
+    </article>
+  </ng-container>
+</section>
