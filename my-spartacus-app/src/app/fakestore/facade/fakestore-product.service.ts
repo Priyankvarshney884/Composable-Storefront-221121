@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { filter, map, tap } from 'rxjs/operators';
+import { filter, map, tap, take } from 'rxjs/operators';
 import { Product } from '@spartacus/core';
 import { FakestoreLoaderState, StateWithFakestore } from '../store/fakestore-state';
 import * as FakestoreActions from '../store/actions/fakestore.actions';
@@ -12,8 +12,19 @@ export class FakestoreProductService {
   constructor(private store: Store<StateWithFakestore>) {}
 
   // Explicit command-style method: call when you want to trigger a fetch.
+  // It will skip the backend call if the product is already in store.
   load(id: string): void {
-    this.store.dispatch(FakestoreActions.loadFakestoreProduct({ id }));
+    this.store
+      .pipe(select(FakestoreSelectors.getFakestoreProductState(id)), take(1))
+      .subscribe((state) => {
+        if (state?.success && state.value) {
+          return;
+        }
+        if (state?.loading) {
+          return;
+        }
+        this.store.dispatch(FakestoreActions.loadFakestoreProduct({ id }));
+      });
   }
 
   // Query-style method: returns data and can auto-dispatch if not loaded yet.
